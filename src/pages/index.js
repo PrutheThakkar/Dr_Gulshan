@@ -69,14 +69,15 @@ const HomePage = ({ data }) => {
           </span>
             </Link>
           </div>
-
           <div className="hero-image">
             <img
-              src={require("../videos/Comp-1.gif").default}
+              src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/Comp-1.gif"
               alt="3D Heart Illustration"
               id="heartImage"
+              loading="lazy"
             />
           </div>
+
         </div>
       </section>
 

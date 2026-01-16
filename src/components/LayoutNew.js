@@ -5,7 +5,7 @@ import Lenis from "@studio-freight/lenis"
 
 import Header from "./HeaderNew"
 import Footer from "./FooterNew"
-import Preloader from "./preloader"
+// import Preloader from "./preloader"
 
 import "../css/about.css"
 import "../css/blog.css"
@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Preloader />
+      {/* <Preloader /> */}
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main id="smooth-wrapper">{children}</main>
       <Footer />
