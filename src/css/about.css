@@ -1,0 +1,70 @@
+.inner-hero-sec {
+  position: relative;
+  padding-top: 20px;
+}
+@media (max-width: 767px) {
+  .inner-hero-sec {
+    height: auto;
+  }
+}
+.inner-hero-sec picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.inner-hero-sec picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inner-hero-sec .page-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=about.css.map */
+
+
+
+.about-section .container{
+display: flex;
+}
+
+.about-section .container .left{
+  width: 50%;
+}
+.about-section .container .left h2{
+  text-align: left;
+}
+.about-section .container .right{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.about-section .container .right .img-wrap{
+ width: 225px;
+ height: auto;
+
+}
+.about-section .container .right .img-wrap img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.inner-hero-sec .container {
+  background-image: url("https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/web-banner-inside.png");
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat;  
+  border-radius: 25px;
+}

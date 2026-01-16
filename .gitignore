@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Gatsby build files
+.cache/
+public/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+
+
+# Videos
+src/videos/
+*.mp4
+*.mov

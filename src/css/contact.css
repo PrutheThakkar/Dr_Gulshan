@@ -1,0 +1,128 @@
+:root {
+  --color-primary: #9E0101;
+  --color-secondary: rgba(158, 1, 1, 0.75);
+  --color-third: rgba(158, 1, 1, 0.5);
+  --color-fourth: rgba(158, 1, 1, 0.25);
+  --color-text: rgba(0, 0, 0, 0.75);
+  --color-bg: #FFFFFF;
+}
+
+.appointment-section {
+  position: relative;
+  background: #fff;
+  /* LEFT */
+  /* RIGHT */
+  /* BLOBS */
+  /* RESPONSIVE */
+}
+.appointment-section .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+}
+.appointment-section .appointment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+.appointment-section .appointment-left .contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+.appointment-section .appointment-left .contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #8b1c13;
+}
+.appointment-section .appointment-left .contact-info li .icon {
+  margin-right: 12px;
+}
+.appointment-section .appointment-left .contact-info li .icon svg {
+  width: 15px;
+  height: 15px;
+}
+.appointment-section .appointment-left .contact-info li a {
+  color: inherit;
+  text-decoration: none;
+}
+.appointment-section .appointment-left .map-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 280px;
+}
+.appointment-section .appointment-left .map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.appointment-section .appointment-form .form-group {
+  margin-bottom: 30px;
+}
+.appointment-section .appointment-form .form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #2b2b2b;
+}
+.appointment-section .appointment-form .form-group input,
+.appointment-section .appointment-form .form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(139, 28, 19, 0.25);
+  padding: 8px 0;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+}
+.appointment-section .appointment-form .form-group input:focus,
+.appointment-section .appointment-form .form-group textarea:focus {
+  border-color: #8b1c13;
+}
+.appointment-section .appointment-form .btn-submit {
+  margin-top: 10px;
+  padding: 14px 36px;
+  border-radius: 40px;
+  background: transparent;
+  border: 1px solid #8b1c13;
+  color: #8b1c13;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.appointment-section .appointment-form .btn-submit:hover {
+  background: #8b1c13;
+  color: #fff;
+}
+.appointment-section .blob {
+  position: absolute;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+.appointment-section .blob.blob-top img {
+  width: 200px;
+  height: 200px;
+  top: -20%;
+  right: 20%;
+}
+@media (max-width: 767px) {
+  .appointment-section .blob.blob-top img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 992px) {
+  .appointment-section .appointment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-wrap a {
+  margin-top: 10px;
+}/*# sourceMappingURL=contact.css.map */

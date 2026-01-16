@@ -1,0 +1,290 @@
+.expertise-detail .inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 1200px;
+}
+.expertise-detail .inner-container .left {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+.expertise-detail .inner-container .left .left-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 565px;
+}
+@media (max-width: 1680px) {
+  .expertise-detail .inner-container .left .left-wrap {
+    width: 600px;
+    height: 465px;
+  }
+}
+@media (max-width: 1440px) {
+  .expertise-detail .inner-container .left .left-wrap {
+    width: 500px;
+    height: 365px;
+  }
+}
+@media (max-width: 1280px) {
+  .expertise-detail .inner-container .left .left-wrap {
+    width: 300px;
+    height: auto;
+  }
+}
+.expertise-detail .inner-container .left .left-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.expertise-detail .inner-container .right {
+  text-align: left;
+}
+.expertise-detail .inner-container .right h3 {
+  margin-bottom: 40px;
+}
+.expertise-detail .inner-container .right p .expertise-title {
+  color: #9b1c1c;
+  font-size: clamp(1.125rem, 0.2004rem + 1.083vw, 1.5rem);
+}
+
+.expertise-slider {
+  position: relative;
+  /* When hovering the slider */
+  /* Optional image zoom on hover */
+}
+.expertise-slider::before {
+  content: "";
+  background: url(/images/expertiese-component.png);
+  width: 138px;
+  height: 138px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 3%;
+  top: -1%;
+}
+.expertise-slider .container {
+  overflow: hidden;
+}
+.expertise-slider .swiper {
+  overflow: visible;
+}
+.expertise-slider .swiper-slide {
+  transition: all 0.5s;
+}
+.expertise-slider .expertise-Swiper:hover {
+  /* Keep hovered slide sharp */
+}
+.expertise-slider .expertise-Swiper:hover .swiper-slide {
+  filter: blur(0.5px);
+  opacity: 0.5;
+}
+.expertise-slider .expertise-Swiper:hover .swiper-slide:hover {
+  filter: blur(0);
+  opacity: 1;
+  z-index: 2;
+}
+.expertise-slider .expertise-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.expertise-slider .card-image {
+  height: 417px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.expertise-slider .card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.expertise-slider .swiper-slide:hover img {
+  transform: scale(1.05);
+}
+.expertise-slider .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #9b1c1c;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.expertise-main-page {
+  /* Section Header */
+  /* Grid */
+  /* Tablet */
+  /* Mobile */
+}
+.expertise-main-page .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.expertise-main-page .section-header .subtitle {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c8322a;
+  margin-bottom: 10px;
+}
+.expertise-main-page .section-header .title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #9b1c1c;
+  line-height: 1.2;
+}
+.expertise-main-page .expertise-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.expertise-main-page .expertise-grid li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.expertise-main-page .expertise-grid li a:hover .img-wrap img {
+  transform: scale(1.08);
+}
+.expertise-main-page .expertise-grid li .img-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f6f6f6;
+  height: 417px;
+}
+@media (max-width: 1680px) {
+  .expertise-main-page .expertise-grid li .img-wrap {
+    height: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .expertise-main-page .expertise-grid li .img-wrap {
+    height: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .expertise-main-page .expertise-grid li .img-wrap {
+    height: 200px;
+  }
+}
+.expertise-main-page .expertise-grid li .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.expertise-main-page .expertise-grid li h3 {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #b01212;
+}
+@media (max-width: 991px) {
+  .expertise-main-page .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .expertise-main-page .section-header .title {
+    font-size: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .expertise-main-page {
+    padding: 60px 0;
+    padding-top: 0;
+  }
+  .expertise-main-page .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .expertise-main-page .section-header {
+    margin-bottom: 35px;
+  }
+  .expertise-main-page .section-header .title {
+    font-size: 26px;
+  }
+  .expertise-main-page .expertise-grid li .img-wrap img {
+    height: 220px;
+  }
+}
+.expertise-main-page .treatments-care {
+  padding: 120px 0 0 0;
+  background: #fff;
+  /* Section Heading */
+  /* Grid */
+  /* Card */
+  /* Responsive */
+}
+.expertise-main-page .treatments-care .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.expertise-main-page .treatments-care .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.expertise-main-page .treatments-care .section-header .section-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #9b1c1c;
+  letter-spacing: 0.5px;
+}
+.expertise-main-page .treatments-care .care-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+}
+.expertise-main-page .treatments-care .care-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 52px;
+  box-shadow: 0 0px 15px rgba(155, 28, 28, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.expertise-main-page .treatments-care .care-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0px 20px rgba(155, 28, 28, 0.75);
+}
+.expertise-main-page .treatments-care .card-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #9b1c1c;
+  margin-bottom: 20px;
+}
+.expertise-main-page .treatments-care .card-desc {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #444;
+  margin-bottom: 32px;
+}
+.expertise-main-page .treatments-care .learn-more {
+  font-size: 16px;
+  color: #e6a4a4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.expertise-main-page .treatments-care .learn-more:hover {
+  color: #9b1c1c;
+}
+@media (max-width: 991px) {
+  .expertise-main-page .treatments-care .care-grid {
+    grid-template-columns: 1fr;
+  }
+  .expertise-main-page .treatments-care .care-card {
+    padding: 40px;
+  }
+}/*# sourceMappingURL=expertise.css.map */
