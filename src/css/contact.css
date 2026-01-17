@@ -21,6 +21,11 @@
   padding: 0 20px;
   position: relative;
 }
+@media (max-width:1440px) {
+  .appointment-section .container {
+    max-width: 80%;
+  }
+}
 .appointment-section .appointment-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;

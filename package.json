@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "formik": "^2.4.9",
     "gatsby": "^5.14.6",
     "gatsby-plugin-image": "^3.15.0",
     "gatsby-plugin-manifest": "^5.14.0",
@@ -15,6 +16,7 @@
     "gatsby-source-wordpress": "^7.16.0",
     "gatsby-transformer-sharp": "^5.15.0",
     "gsap": "^3.14.2",
+    "http-proxy-middleware": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.10",

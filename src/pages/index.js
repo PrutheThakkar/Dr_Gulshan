@@ -163,7 +163,8 @@ const HomePage = ({ data }) => {
      <LatestUpdate posts={data.allWpPost.edges} />
 
       {/* FAQ SECTION */}
-     <FaqSection faqs={faqs} />
+    <FaqSection limit={4} />
+
     </Layout>
   );
 };

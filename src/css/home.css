@@ -41,6 +41,11 @@
     height: 550px;
   }
 }
+@media (max-width: 1280px) {
+  .hero-image {
+    height: 450px;
+  }
+}
 @media (max-width: 767px) {
   .hero-image {
     height: 250px;
@@ -229,6 +234,15 @@
   background-color: var(--color-third);
   border-radius: 50%;
 }
+@media (max-width:1680px) {
+  .symptoms-section .image-icon {
+    width: 160px;
+    height: 160px;
+    background-color: var(--color-third);
+    border-radius: 50%;
+  }
+  
+}
 @media (max-width: 767px) {
   .symptoms-section .image-icon {
     width: 90px;
@@ -270,6 +284,11 @@
 @media (max-width: 1440px) {
   .video-section .inner-video-section {
     height: 550px;
+  }
+}
+@media (max-width: 1280px) {
+  .video-section .inner-video-section {
+    height: 450px;
   }
 }
 @media (max-width: 767px) {
@@ -867,6 +886,11 @@
 .latest-update .swiper {
   padding: 30px 120px;
 }
+@media (max-width:1280px) {
+  .latest-update .swiper {
+    padding: 20px 40px;
+  }
+}
 @media (max-width: 767px) {
   .latest-update .swiper {
     padding: 30px 50px;
@@ -999,6 +1023,11 @@
     max-width: 90%;
   }
 }
+@media (max-width: 1440px) {
+  .faq-section .container {
+    max-width: 70%;
+  }
+}
 .faq-section .section-header {
   text-align: center;
   margin-bottom: 70px;
@@ -1066,6 +1095,15 @@
   position: relative;
   flex-shrink: 0;
 }
+@media (max-width:1440px) {
+  .faq-section .faq-icon {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    flex-shrink: 0;
+  }
+}
+
 .faq-section .faq-icon::before, .faq-section .faq-icon::after {
   content: "";
   position: absolute;

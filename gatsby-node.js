@@ -4,7 +4,49 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   /* ================================
-     1️⃣ CREATE EXPERTISE DETAIL PAGES
+     1️⃣ CREATE WORDPRESS PAGES
+     ================================ */
+
+  const pagesResult = await graphql(`
+    query {
+      allWpPage {
+        nodes {
+          id
+          slug
+        }
+      }
+    }
+  `);
+
+  if (pagesResult.errors) {
+    throw pagesResult.errors;
+  }
+
+  const pageTemplate = path.resolve("./src/templates/page.js");
+
+  pagesResult.data.allWpPage.nodes.forEach(page => {
+    // Home page
+    if (page.slug === "home") {
+      createPage({
+        path: "/",
+        component: pageTemplate,
+        context: {
+          id: page.id,
+        },
+      });
+    } else {
+      createPage({
+        path: `/${page.slug}`,
+        component: pageTemplate,
+        context: {
+          id: page.id,
+        },
+      });
+    }
+  });
+
+  /* ================================
+     2️⃣ CREATE EXPERTISE DETAIL PAGES
      ================================ */
 
   const expertiseResult = await graphql(`
@@ -26,7 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
     "./src/templates/expertise-detail.js"
   );
 
-  expertiseResult.data.allWpExpertise.nodes.forEach((expertise) => {
+  expertiseResult.data.allWpExpertise.nodes.forEach(expertise => {
     createPage({
       path: `/expertise/${expertise.slug}`,
       component: expertiseTemplate,
@@ -37,7 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   /* ================================
-     2️⃣ CREATE BLOG DETAIL PAGES
+     3️⃣ CREATE BLOG DETAIL PAGES
      ================================ */
 
   const blogResult = await graphql(`
@@ -59,9 +101,9 @@ exports.createPages = async ({ graphql, actions }) => {
     "./src/templates/blog-detail.js"
   );
 
-  blogResult.data.allWpPost.nodes.forEach((post) => {
+  blogResult.data.allWpPost.nodes.forEach(post => {
     createPage({
-      path: post.uri, // WordPress slug (SEO friendly)
+      path: post.uri,
       component: blogTemplate,
       context: {
         id: post.id,

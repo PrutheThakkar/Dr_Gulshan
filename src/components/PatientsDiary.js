@@ -64,28 +64,42 @@ const PatientsDiary = () => {
             className="diary-swiper"
           >
             {diary.videoSection?.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <div className="diary-card video-card">
-                  <div className="media-wrapper">
-                    {testimonial?.testimonialVideo?.node?.mediaItemUrl ? (
-                      <iframe
-                        src={`${testimonial.testimonialVideo.node.mediaItemUrl}?mute=1&autoplay=1`} // mute + autoplay
-                        title={testimonial.testimonialTitle || "Patient Testimonial"}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <div className="media-placeholder"></div>
-                    )}
-                  </div>
+             <SwiperSlide key={index}>
+  <div className="diary-card video-card">
+    <div className="media-wrapper">
+      {testimonial?.testimonialVideo?.node?.mediaItemUrl ? (
+        <iframe
+          className="testimonial-video" 
+          src={testimonial.testimonialVideo.node.mediaItemUrl} // no autoplay + mute
+          title={testimonial.testimonialTitle || "Patient Testimonial"}
+          frameBorder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          muted // Make the video muted by default
+          onClick={(e) => {
+            const iframe = e.target;
+            const video = iframe.contentWindow.document.querySelector('video');
+            if (video) {
+              if (video.paused) {
+                video.play();  // Play the video when clicked
+              } else {
+                video.pause();  // Pause it if it’s already playing
+              }
+            }
+          }}
+        />
+      ) : (
+        <div className="media-placeholder"></div>
+      )}
+    </div>
 
-                  <div className="card-content">
-                    <h3>{testimonial.testimonialTitle || "Patient Name"}</h3>
-                    <span>{testimonial.testimonialSubtitle || "City"}</span>
-                  </div>
-                </div>
-              </SwiperSlide>
+    <div className="card-content">
+      <h3>{testimonial.testimonialTitle || "Patient Name"}</h3>
+      <span>{testimonial.testimonialSubtitle || "City"}</span>
+    </div>
+  </div>
+</SwiperSlide>
+
 
             ))}
           </Swiper>

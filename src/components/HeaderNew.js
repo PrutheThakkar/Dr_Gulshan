@@ -2,21 +2,19 @@ import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Logo from "../images/gulshan-rohra-logo.svg"
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [expertiseOpen, setExpertiseOpen] = useState(false)
-  const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false)
 
   useEffect(() => {
-  const handleScroll = () => {
-    setIsSticky(window.scrollY > 120);
-  };
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 120)
+    }
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const data = useStaticQuery(graphql`
     query HeaderMenuAndExpertise {
@@ -25,7 +23,13 @@ const Header = () => {
           nodes {
             id
             label
-            path
+            connectedNode {
+              node {
+                ... on WpPage {
+                  slug
+                }
+              }
+            }
           }
         }
       }
@@ -65,15 +69,15 @@ const Header = () => {
 
   return (
     <header
-  className={`site-header ${menuOpen ? "menu-open" : ""} ${
-    isSticky ? "is-sticky" : ""
-  }`}
->
+      className={`site-header ${menuOpen ? "menu-open" : ""} ${
+        isSticky ? "is-sticky" : ""
+      }`}
+    >
       <div className="container header-inner">
         {/* Logo */}
         <div className="logo">
           <Link to="/" onClick={closeMenu}>
-            <img src={Logo} alt="Heart Icon" width="354" height="103" />
+            <img src={Logo} alt="Gulshan Rohra" width="354" height="103" />
           </Link>
         </div>
 
@@ -92,6 +96,9 @@ const Header = () => {
         <nav className="main-nav">
           <ul>
             {menuItems.map(item => {
+              const slug = item.connectedNode?.node?.slug
+
+              // Expertise dropdown
               if (item.label.toLowerCase() === "expertise") {
                 return (
                   <li
@@ -100,33 +107,38 @@ const Header = () => {
                     onMouseEnter={openExpertise}
                     onMouseLeave={closeExpertise}
                   >
-                    {/* 🔥 CLICK → LISTING PAGE */}
                     <Link
                       to="/expertise"
                       className="expertise-toggle"
-                      aria-expanded={expertiseOpen}
                       onClick={closeMenu}
                     >
                       Expertise
-                      <span className="arrow">
-                        <svg
-                          width="38"
-                          height="35"
-                          viewBox="0 0 38 35"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g filter="url(#filter0_d_325_724)">
-                            <path
-                              d="M12.3082 11.3059C12.5055 11.11 12.7732 11 13.0523 11C13.3314 11 13.599 11.11 13.7964 11.3059L19.0064 16.4779L24.2163 11.3059C24.4148 11.1156 24.6807 11.0103 24.9566 11.0127C25.2326 11.015 25.4966 11.1249 25.6917 11.3186C25.8869 11.5124 25.9976 11.7744 26 12.0484C26.0024 12.3223 25.8963 12.5863 25.7045 12.7833L19.7505 18.6941C19.5531 18.89 19.2854 19 19.0064 19C18.7273 19 18.4596 18.89 18.2622 18.6941L12.3082 12.7833C12.1108 12.5874 12 12.3217 12 12.0446C12 11.7676 12.1108 11.5019 12.3082 11.3059Z"
-                              fill="#9E0101"
-                            />
-                          </g>
-                        </svg>
-                      </span>
+                         <span class="arrow">
+                <svg width="38" height="35" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d_325_724)">
+                    <path
+                      d="M12.3082 11.3059C12.5055 11.11 12.7732 11 13.0523 11C13.3314 11 13.599 11.11 13.7964 11.3059L19.0064 16.4779L24.2163 11.3059C24.4148 11.1156 24.6807 11.0103 24.9566 11.0127C25.2326 11.015 25.4966 11.1249 25.6917 11.3186C25.8869 11.5124 25.9976 11.7744 26 12.0484C26.0024 12.3223 25.8963 12.5863 25.7045 12.7833L19.7505 18.6941C19.5531 18.89 19.2854 19 19.0064 19C18.7273 19 18.4596 18.89 18.2622 18.6941L12.3082 12.7833C12.1108 12.5874 12 12.3217 12 12.0446C12 11.7676 12.1108 11.5019 12.3082 11.3059Z"
+                      fill="#9E0101" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_325_724" x="0" y="3" width="38" height="32" filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="6" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_325_724" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_325_724" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+
+              </span>
                     </Link>
 
-                    {/* Dropdown */}
                     <div className="expertise-dropdown">
                       <div className="dropdown-inner">
                         <div className="column">
@@ -148,6 +160,7 @@ const Header = () => {
                               to={`/expertise/${node.slug}`}
                               onClick={closeMenu}
                             >
+                              
                               {node.title}
                             </Link>
                           ))}
@@ -158,9 +171,13 @@ const Header = () => {
                 )
               }
 
+              // Normal menu item
               return (
                 <li key={item.id}>
-                  <Link to={item.path} onClick={closeMenu}>
+                  <Link
+                    to={slug === "home" ? "/" : `/${slug}`}
+                    onClick={closeMenu}
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -169,8 +186,12 @@ const Header = () => {
 
             {/* CTA */}
             <li>
-              <Link to="#contact" className="btn-primary" onClick={closeMenu}>
-                Reach Out <span></span>
+              <Link
+                to="/contact-us"
+                className="btn-primary"
+                onClick={closeMenu}
+              >
+                Reach Out
               </Link>
             </li>
           </ul>

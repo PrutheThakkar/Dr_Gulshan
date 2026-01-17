@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-const FaqSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+const FaqSection = ({ limit = null }) => {
+  const [activeIndex, setActiveIndex] = useState(null)
 
-  /* ================= GRAPHQL QUERY ================= */
   const data = useStaticQuery(graphql`
     query FaqSectionQuery {
       allWpFaq {
@@ -20,11 +19,15 @@ const FaqSection = () => {
     }
   `)
 
-  /* ================= DATA NORMALIZATION ================= */
-  const faqs =
+  let faqs =
     data?.allWpFaq?.nodes?.flatMap(
       node => node?.faqSectionNew?.faq || []
     ) || []
+
+  // ✅ LIMIT HANDLING
+  if (limit) {
+    faqs = faqs.slice(0, limit)
+  }
 
   if (faqs.length === 0) return null
 
@@ -41,7 +44,7 @@ const FaqSection = () => {
         </div>
 
         <ul className="faq-list">
-          {faqs.slice(0, 4).map((item, index) => (
+          {faqs.map((item, index) => (
             <li
               key={index}
               className={`faq-item ${activeIndex === index ? "active" : ""}`}

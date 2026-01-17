@@ -41,8 +41,8 @@ const Footer = () => {
                 </p>
 
                 <div className="footer-map-link">
-                  <a href="#" target="_blank" rel="noreferrer">
-                    View Location Map Here <span>↗</span>
+                  <a className="btn-primary" href="#" target="_blank" rel="noreferrer">
+                    View Location Map Here <span></span>
                   </a>
                 </div>
               </div>
