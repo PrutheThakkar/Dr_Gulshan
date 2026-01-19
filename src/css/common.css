@@ -1218,11 +1218,14 @@ display: none;
   /* font-size: 15px; */
   color: #9b1c1c;
 }
+.footer-bottom a{
+ color: #9b1c1c;
+}
 .footer-bottom .footer-contact {
   display: flex;
   gap: 24px;
 }
-@media (max-width:9920px) {
+@media (max-width:992px) {
   .footer-bottom .footer-contact{
     flex-direction: column;
     gap: 10px;

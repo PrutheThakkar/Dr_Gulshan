@@ -53,13 +53,28 @@ const Footer = () => {
             </div>
 
             {/* FOOTER BOTTOM */}
-            <div className="footer-bottom">
-              <span>ALL rights reserved © 2026</span>
-              <div className="footer-contact">
-                <span>✉ appointment@drgulshanrohra.com</span>
-                <span>☎ +91 8447914579</span>
-              </div>
-            </div>
+           <div className="footer-bottom">
+  <span>ALL rights reserved © 2026</span>
+
+  <div className="footer-contact">
+    <a
+      id="footer-email"
+      href="mailto:appointment@drgulshanrohra.com"
+      aria-label="Send email to appointment@drgulshanrohra.com"
+    >
+      ✉ appointment@drgulshanrohra.com
+    </a>
+
+    <a
+      id="footer-phone"
+      href="tel:+918447914579"
+      aria-label="Call +91 8447914579"
+    >
+      ☎ +91 8447914579
+    </a>
+  </div>
+</div>
+
 
           </div>
         </div>
