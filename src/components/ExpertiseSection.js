@@ -45,7 +45,7 @@ const ExpertiseSection = ({ prePostOperative = [] }) => {
         </div>
 
         {/* Treatments / Care Grid */}
-        {prePostOperative.length > 0 && (
+        {/* {prePostOperative.length > 0 && (
           <div className="treatments-care">
             <div className="care-grid">
               {prePostOperative.map((item, index) => (
@@ -57,7 +57,7 @@ const ExpertiseSection = ({ prePostOperative = [] }) => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
     {/* Expertise Slider */}
 <Swiper

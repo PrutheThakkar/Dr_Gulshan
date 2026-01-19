@@ -746,7 +746,7 @@ p {
 .site-header .main-nav ul .expertise-dropdown {
   position: absolute;
   top: 100%;
-  left: -100%;
+  left: -125%;
   width: clamp(320px, 46.875vw, 900px);
   padding: 60px 30px;
   z-index: 99;

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/LayoutNew"
 import Seo from "../components/seo"
+import LatestUpdate from "../components/LatestUpdate";
 
 const BlogDetail = ({ data }) => {
   const post = data?.wpPost
@@ -52,6 +53,8 @@ const BlogDetail = ({ data }) => {
         </div>
     </section>
 
+  <LatestUpdate posts={data.allWpPost.edges} />
+
       </article>
     </Layout>
   )
@@ -67,15 +70,37 @@ export const Head = ({ data }) => (
 )
 
 export const query = graphql`
-  query BlogDetail($id: String!) {
-    wpPost(id: { eq: $id }) {
+query BlogDetail($id: String!) {
+  wpPost(id: { eq: $id }) {
+    title
+    excerpt
+    content
+    featuredImage {
+      node {
+        gatsbyImage(
+          width: 1200
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
+      }
+    }
+  }
+
+ allWpPost(
+  sort: { fields: date, order: DESC }
+  limit: 3
+  filter: { id: { ne: $id } }
+) {
+  edges {
+    node {
+      id
       title
       excerpt
-      content
+      slug
       featuredImage {
         node {
           gatsbyImage(
-            width: 1200
+            width: 600
             placeholder: BLURRED
             formats: [AUTO, WEBP]
           )
@@ -83,4 +108,8 @@ export const query = graphql`
       }
     }
   }
+}
+
+}
+
 `

@@ -28,14 +28,14 @@ const BlogListingPage = ({ data }) => {
 
         <div className="container">
           <div className="page-title">
-            <h1>{page?.title}</h1>
+            <h1>Blog & Patient Education</h1>
           </div>
         </div>
       </section>
 
       {/* ================= BLOG LISTING ================= */}
       <section className="blog-listing-page">
-        <LatestUpdate />
+        <LatestUpdate hideKnowMore />
       </section>
 
         {/* ================= FAQ SECTION ================= */}

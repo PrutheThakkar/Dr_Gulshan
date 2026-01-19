@@ -58,7 +58,8 @@
   box-shadow: 0 0px 15px rgba(155, 28, 28, 0.9);
 }
 .latest-update .blog-image {
-  height: 300px;
+  /* height: 300px; */
+  height: auto;
   background: #f6eaea;
   overflow: hidden;
 }
