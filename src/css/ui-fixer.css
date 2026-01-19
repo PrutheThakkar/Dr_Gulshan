@@ -83,6 +83,14 @@ display: none;
     text-transform: uppercase;
     color: #b33b3b;
   }
+
+  .mobile-menu .btn-primary{
+    background: #b33b3b;
+    color: #fff;
+    margin-top: 0;
+  }
+
+  
 }
 
 
