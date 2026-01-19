@@ -160,7 +160,7 @@ const Header = () => {
 
               return (
                 <li key={item.id}>
-                  <Link to={slug === "home" ? "/" : `/${slug}`}>
+                  <Link to={slug === "Home" ? "/" : `/${slug}`}>
                     {item.label}
                   </Link>
                 </li>

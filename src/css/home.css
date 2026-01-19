@@ -30,6 +30,12 @@
 .hero-image {
   perspective: 1000px;
 }
+@media (max-width: 1480px) {
+  .hero-image {
+    height: 620px;
+    width: auto;
+  }
+}
 @media (max-width: 1440px) {
   .hero-image {
     height: 620px;
@@ -87,6 +93,11 @@
 @media (max-width: 1680px) {
   .hero-section {
     height: 800px;
+  }
+}
+@media (max-width: 1480px) {
+  .hero-section {
+    height: 700px;
   }
 }
 @media (max-width: 1440px) {
