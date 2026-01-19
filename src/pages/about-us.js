@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
 <>
-      {/* ================= HERO SECTION ================= */}
+     {/* ================= HERO SECTION ================= */}
       <section className="inner-hero-sec">
 
         {heroImage && (
@@ -38,13 +38,13 @@ const AboutPage = ({ data }) => {
         </div>
 
       </section>
-
+ 
       {/* ================= ABOUT SECTION ================= */}
       <section className="about-section">
         <div className="container hero-inner">
 
           <div className="left">
-            <h2>{aboutData.aboutUsTitle}</h2>
+            <h2 className="title">{aboutData.aboutUsTitle}</h2>
             <p className="sub-title">{aboutData.aboutUsParagraph}</p>
           </div>
 
@@ -81,8 +81,8 @@ export const query = graphql`
             node {
               altText
               gatsbyImage(
-                width: 300
-                height: 300
+                width: 2048
+                height: 2048
                 quality: 100
                 layout: CONSTRAINED
                 placeholder: BLURRED

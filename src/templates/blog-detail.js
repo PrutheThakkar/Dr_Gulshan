@@ -15,28 +15,42 @@ const BlogDetail = ({ data }) => {
     <Layout>
       <article className="blog-detail">
 
-        {/* HERO */}
-        <section className="blog-hero">
-          <div className="container">
-            <h1>{post.title}</h1>
 
-            {featuredImage && (
-              <GatsbyImage
-                image={featuredImage}
-                alt={post.title}
-                className="blog-hero-image"
-              />
-            )}
+         {/* ================= HERO SECTION ================= */}
+      <section className="inner-hero-sec">
+        <div className="container">
+
+          <div className="page-title">
+           <h1>{post.title}</h1>
           </div>
-        </section>
 
-        {/* CONTENT */}
-        <section className="blog-content">
-          <div
+        </div>
+      </section>
+
+
+     <section class="expertise-detail">
+        <div class="inner-container">
+            <div class="content">
+                <div class="left">
+                    <div class="left-wrap">
+                         {featuredImage && (
+                        <GatsbyImage
+                          image={featuredImage}
+                          alt={post.title}
+                          className="blog-hero-image"
+                        />
+                      )}
+                    </div>
+                </div>
+                <div class="right">
+                     <div
             className="container"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-        </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
       </article>
     </Layout>
