@@ -186,7 +186,7 @@
 }
 .symptoms-section::before {
   content: "";
-  background: url(../images/Bubble-4.svg);
+  background: url(../images/Bubble-4-new.png);
   background-repeat: no-repeat;
   width: 200px;
   height: 200px;
@@ -467,6 +467,11 @@
     height: 350px;
   }
 }
+@media (max-width: 992px) {
+  .expertise-slider .card-image {
+    height: 250px;
+  }
+}
 .expertise-slider .card-image img {
   width: 100%;
   height: 100%;
@@ -649,6 +654,13 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   color: #9b1c1c;
 }
+@media (max-width: 992px) {
+.patients-diary .diary-nav .swiper-button-prev,
+.patients-diary .diary-nav .swiper-button-next {
+  width: 35px;
+  height: 35px;
+}
+}
 .patients-diary .diary-nav .swiper-button-prev::after,
 .patients-diary .diary-nav .swiper-button-next::after {
   font-size: 18px;
@@ -828,6 +840,13 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   color: #8e1c1c;
 }
+@media (max-width:992px) {
+  .google-reviews .swiper-button-prev,
+.google-reviews .swiper-button-next {
+  width: 35px;
+  height: 35px;
+}
+}
 .google-reviews .swiper-button-prev::after,
 .google-reviews .swiper-button-next::after {
   font-size: 16px;
@@ -840,7 +859,7 @@
 }
 @media (max-width: 767px) {
   .google-reviews .swiper-button-prev {
-    top: 60% !important;
+    top: 70% !important;
   }
 }
 .google-reviews .swiper-button-next {
@@ -850,7 +869,7 @@
 }
 @media (max-width: 767px) {
   .google-reviews .swiper-button-next {
-    top: 60% !important;
+    top: 70% !important;
   }
 }
 
@@ -917,8 +936,8 @@
 }
 .latest-update .blog-image {
   overflow: hidden;
-  /* height: 300px; */
-  height: auto;
+  height: 300px;
+  /* height: auto; */
   background: #f6eaea;
 }
 .latest-update .blog-image img {
@@ -959,13 +978,13 @@
   color: #9b1c1c;
 }
 .latest-update .blog-title {
-  font-size: 22px;
+  /* font-size: 22px; */
   font-weight: 600;
   color: #9b1c1c;
   margin-bottom: 14px;
 }
 .latest-update .read-more {
-  font-size: 14px;
+  /* font-size: 14px; */
   color: #e0a3a3;
   text-decoration: none;
 }
@@ -994,6 +1013,13 @@
   border-radius: 50%;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   color: #8e1c1c;
+}
+@media (max-width:992px) {
+ .latest-update .swiper-button-prev,
+.latest-update .swiper-button-next {
+   width: 35px;
+  height: 35px;
+}
 }
 .latest-update .swiper-button-prev::after,
 .latest-update .swiper-button-next::after {
@@ -1027,6 +1053,11 @@
 @media (max-width: 1440px) {
   .faq-section .container {
     max-width: 70%;
+  }
+}
+@media (max-width: 992px) {
+  .faq-section .container {
+    max-width: 90%;
   }
 }
 .faq-section .section-header {

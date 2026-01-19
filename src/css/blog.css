@@ -101,13 +101,13 @@
   color: #9b1c1c;
 }
 .latest-update .blog-title {
-  font-size: 22px;
+  /* font-size: 22px; */
   font-weight: 600;
   color: #9b1c1c;
   margin-bottom: 14px;
 }
 .latest-update .read-more {
-  font-size: 14px;
+  /* font-size: 14px; */
   color: #e0a3a3;
   text-decoration: none;
 }
