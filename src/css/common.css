@@ -783,6 +783,16 @@ p {
   transition: all 0.8s;
   text-shadow: none;
 }
+@media (max-width:1366px) {
+  .site-header .main-nav ul .dropdown-inner a{
+    font-size: 16px;
+  }
+}
+@media (max-width:920px) {
+  .site-header .main-nav ul .dropdown-inner a{
+    font-size: 12px;
+  }
+}
 .site-header .main-nav ul .dropdown-inner a::before {
   content: "";
   background: url(../images/arrow-red.svg);
