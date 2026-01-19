@@ -14,6 +14,7 @@ import "../css/contact.css"
 import "../css/expertise.css"
 import "../css/home.css"
 import "../css/ui-fixer.css"
+import "../css/google-reviews.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
