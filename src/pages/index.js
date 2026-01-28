@@ -12,7 +12,7 @@ import { initHeroAnimation } from "../Animation/HomeAnimation"
 const HomePage = ({ data }) => {
   // const { heroRef, heartRef } = useGsapAnimations();
   const homePage = data?.allWpPage?.nodes?.[0]?.homePage;
-  const expertiseData = data.allWpPage.nodes[0].homePage;
+  const expertisePosts = data?.allWpExpertise?.edges || []
   const faqs = data?.allWpFaq?.nodes?.[0]?.faqSectionNew?.faq || [];
 
   const videoRef = useRef(null);
@@ -59,7 +59,7 @@ const HomePage = ({ data }) => {
               {homePage.pageSubtitle ||
                 "Under the care of Dr. Gulshan Rohra..."}
             </p>
-            <Link to={homePage.pageLink || "/about"} className="btn-primary">
+            <Link to={homePage.pageLink || "/about-us"} className="btn-primary">
               Know More <span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -146,15 +146,7 @@ const HomePage = ({ data }) => {
       </section>
 
       {/* OTHER SECTIONS */}
-     <ExpertiseSection
-        expertise={{
-          expertiseTitle: expertiseData.expertiseTitle,
-          expertiseSubtitle: expertiseData.expertiseSubtitle,
-          expertiseSlider: expertiseData.expertiseSlider,
-        }}
-        prePostOperative={expertiseData.prePostOperative}
-      />
-
+     <ExpertiseSection expertiseData={expertisePosts} />
 
       <PatientsDiary patientDiary={homePage} />
 
@@ -254,6 +246,21 @@ export const query = graphql`
     }
   }
 }
+
+ allWpExpertise {
+      edges {
+        node {
+          title
+          slug
+          featuredImage {
+            node {
+              altText
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
 }
 `;
 

@@ -18,55 +18,65 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-<>
-     {/* ================= HERO SECTION ================= */}
-      <section className="inner-hero-sec">
+      <>
+        {/* ================= HERO SECTION ================= */}
+        <section className="inner-hero-sec">
 
-        {heroImage && (
-          <GatsbyImage
-            image={heroImage}
-            alt={heroDesktop?.altText || "About page hero image"}
-            className="inner-hero-img"
+          {/* DESKTOP IMAGE */}
+          {heroImage && (
+            <GatsbyImage
+              image={heroImage}
+              alt={heroDesktop?.altText || "About page hero image"}
+              className="inner-hero-img desktop-img"
+              loading="eager"
+            />
+          )}
+
+          {/* MOBILE IMAGE (STATIC URL) */}
+          <img
+            src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/inside-mobile-image.png"   // 👈 your static mobile image path
+            alt="About page mobile hero image"
+            className="inner-hero-img mobile-img"
             loading="eager"
           />
-        )}
 
-        <div className="container">
-          <div className="page-title">
-            <h1>About Us</h1>
-          </div>
-        </div>
-
-      </section>
- 
-      {/* ================= ABOUT SECTION ================= */}
-      <section className="about-section">
-        <div className="container hero-inner">
-
-          <div className="left">
-            <h2 className="title">{aboutData.aboutUsTitle}</h2>
-            <p className="sub-title">{aboutData.aboutUsParagraph}</p>
-          </div>
-
-          <div className="right">
-            <div className="img-wrap">
-            {gulshanImage && (
-              <GatsbyImage
-                image={gulshanImage}
-                alt={
-                  aboutData?.gulshanImage?.node?.altText ||
-                  "Dr. Gulshan Rohra"
-                }
-                className="about-heart-image"
-              />
-            )}
+          <div className="container">
+            <div className="page-title">
+              <h1>About Us</h1>
             </div>
           </div>
 
-        </div>
-      </section>
-</>
-  </Layout>
+        </section>
+
+
+        {/* ================= ABOUT SECTION ================= */}
+        <section className="about-section">
+          <div className="container hero-inner">
+
+            <div className="left">
+              <h2 className="title">{aboutData.aboutUsTitle}</h2>
+              <p className="sub-title">{aboutData.aboutUsParagraph}</p>
+            </div>
+
+            <div className="right">
+              <div className="img-wrap">
+                {gulshanImage && (
+                  <GatsbyImage
+                    image={gulshanImage}
+                    alt={
+                      aboutData?.gulshanImage?.node?.altText ||
+                      "Dr. Gulshan Rohra"
+                    }
+                    className="about-heart-image"
+                  />
+                )}
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </>
+    </Layout>
   )
 }
 

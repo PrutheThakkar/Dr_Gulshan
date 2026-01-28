@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import gsap from "gsap"
 import Logo from "../images/gulshan-rohra-logo.svg"
 
 const Header = () => {
@@ -7,12 +8,109 @@ const Header = () => {
   const [expertiseOpen, setExpertiseOpen] = useState(false)
   const [isSticky, setIsSticky] = useState(false)
 
+  /* ======================
+     CURSOR REFS (ADDED)
+  ====================== */
+  const cursorRef = useRef(null)
+  const magnifierRef = useRef(null)
+
+  /* ======================
+     STICKY HEADER (UNCHANGED)
+  ====================== */
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 120)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  /* ======================
+     PRELOADER LOGIC (ADDED)
+  ====================== */
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const runPreloader = () => {
+      const preloader = document.getElementById("preloader")
+      if (!preloader) return
+
+      setTimeout(() => {
+        preloader.classList.add("open")
+
+        setTimeout(() => {
+          preloader.style.display = "none"
+          if (window.lenis) window.lenis.start()
+        }, 1300)
+
+      }, 900)
+    }
+
+    if (document.readyState === "complete") {
+      runPreloader()
+    } else {
+      window.addEventListener("load", runPreloader)
+    }
+
+    return () => window.removeEventListener("load", runPreloader)
+  }, [])
+
+  /* ======================
+     CUSTOM CURSOR LOGIC (ADDED)
+  ====================== */
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const cursor = cursorRef.current
+    const magnifier = magnifierRef.current
+    if (!cursor) return
+
+    let mouseX = window.innerWidth / 2
+    let mouseY = window.innerHeight / 2
+
+    const setX = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3.out" })
+    const setY = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3.out" })
+
+    const setMagX = magnifier
+      ? gsap.quickTo(magnifier, "x", { duration: 0.35, ease: "power3.out" })
+      : null
+    const setMagY = magnifier
+      ? gsap.quickTo(magnifier, "y", { duration: 0.35, ease: "power3.out" })
+      : null
+
+    const mouseMove = e => {
+      mouseX = e.clientX
+      mouseY = e.clientY
+    }
+
+    window.addEventListener("mousemove", mouseMove)
+
+    const animate = () => {
+      setX(mouseX)
+      setY(mouseY)
+      if (magnifier) {
+        setMagX(mouseX)
+        setMagY(mouseY)
+      }
+      requestAnimationFrame(animate)
+    }
+    animate()
+
+    const hoverTargets = document.querySelectorAll("a, button, .clickable")
+
+    hoverTargets.forEach(el => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to(cursor, { scale: 1.5, opacity: 0.5, duration: 0.3 })
+      })
+      el.addEventListener("mouseleave", () => {
+        gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3 })
+      })
+    })
+
+    return () => window.removeEventListener("mousemove", mouseMove)
+  }, [])
+
+  /* ======================
+     GRAPHQL DATA (UNCHANGED)
+  ====================== */
   const data = useStaticQuery(graphql`
     query HeaderMenuAndExpertise {
       wpMenu(slug: { eq: "header-menu" }) {
@@ -61,7 +159,33 @@ const Header = () => {
   }
 
   return (
-    <header className={`site-header ${isSticky ? "is-sticky" : ""}`}>
+    <>
+      {/* ================= CURSOR (ADDED) ================= */}
+      <div className="image-cursor" ref={cursorRef}>
+        <img
+          src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/cursor-red.png"
+          alt="cursor"
+        />
+      </div>
+      <div className="magnifier" ref={magnifierRef}></div>
+
+      {/* ================= PRELOADER (ADDED) ================= */}
+      <div id="preloader">
+        <div className="curtain curtain-left"></div>
+        <div className="curtain curtain-right"></div>
+
+        <div className="preloader-inner">
+          <div className="ecg">
+            <span></span>
+          </div>
+          <p className="loading-text">Loading...</p>
+        </div>
+      </div>
+
+      {/* ================= ORIGINAL HEADER (UNCHANGED) ================= */}
+      <header className={`site-header ${isSticky ? "is-sticky" : ""}`}>
+        {/* 🔴 YOUR ORIGINAL CODE CONTINUES EXACTLY AS-IS 🔴 */}
+
       <div className="container header-inner">
         {/* LOGO */}
         <div className="logo">
@@ -71,9 +195,13 @@ const Header = () => {
         </div>
 
         {/* MOBILE TOGGLE */}
-        <button className="menu-toggle" onClick={toggleMenu}>
+        {/* MOBILE TOGGLE */}
+        <div
+          className={`menu-toggle ${menuOpen ? "clicked" : ""}`}
+          onClick={toggleMenu}
+        >
           <span></span><span></span><span></span>
-        </button>
+        </div>
 
         {/* ================= DESKTOP MENU ================= */}
         <nav className="main-nav desktop-menu">
@@ -272,6 +400,7 @@ const Header = () => {
 
       </div>
     </header>
+   </>
   )
 }
 

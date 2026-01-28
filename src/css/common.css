@@ -49,6 +49,14 @@ html {
   color: #222;
 }
 
+main{
+  margin-top: 5%;
+}
+@media (max-width:920px) {
+  main{
+  margin-top: 25%;
+}
+}
 /* =========================
    HIDE SCROLLBAR (DESKTOP)
 ========================= */
@@ -756,7 +764,7 @@ p {
   width: clamp(320px, 46.875vw, 900px);
   padding: 60px 30px;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   opacity: 0;
@@ -896,6 +904,24 @@ display: none;
   .site-header.menu-open .menu-toggle span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
+
+
+
+/* 🔥 WHEN CLICKED (OPEN STATE) */
+.menu-toggle.clicked {
+  span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
   /* =========================
      MOBILE NAV PANEL
   ========================= */
@@ -1325,6 +1351,10 @@ display: none;
 
 .toggle-btn:hover {
   transform: scale(1.1);
+}
+.toggle-btn svg{
+  width: 100%;
+  height: 100%;
 }
 
 /* PRELOADER BASE */

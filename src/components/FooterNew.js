@@ -132,11 +132,27 @@ const Footer = () => {
         <button
           id="socialToggle"
           className="toggle-btn"
-          aria-label="Toggle social links"
+          aria-label={socialOpen ? "Close social links" : "Open social links"}
           onClick={() => setSocialOpen(prev => !prev)}
         >
-          {socialOpen ? "–" : "+"}
+          {socialOpen ? (
+            /* CLOSE (–) SVG */
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M45 22.5C45 34.9264 34.9264 45 22.5 45C10.0736 45 0 34.9264 0 22.5C0 10.0736 10.0736 0 22.5 0C34.9264 0 45 10.0736 45 22.5Z" fill="#9E0101" fill-opacity="0.75" />
+              <path d="M33 24H13C11.8 24 11 23.2 11 22C11 20.8 11.8 20 13 20H33C34.2 20 35 20.8 35 22C35 23.2 34.2 24 33 24Z" fill="white" />
+            </svg>
+
+          ) : (
+            /* OPEN (+) SVG */
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M45 22.5C45 34.9264 34.9264 45 22.5 45C10.0736 45 0 34.9264 0 22.5C0 10.0736 10.0736 0 22.5 0C34.9264 0 45 10.0736 45 22.5Z" fill="#9E0101" fill-opacity="0.75" />
+              <path d="M23 34C21.8 34 21 33.2 21 32V12C21 10.8 21.8 10 23 10C24.2 10 25 10.8 25 12V32C25 33.2 24.2 34 23 34Z" fill="white" />
+              <path d="M33 24H13C11.8 24 11 23.2 11 22C11 20.8 11.8 20 13 20H33C34.2 20 35 20.8 35 22C35 23.2 34.2 24 33 24Z" fill="white" />
+            </svg>
+
+          )}
         </button>
+
 
       </div>
     </>
