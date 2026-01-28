@@ -23,26 +23,34 @@ const ExpertisePage = ({ data }) => {
     <Layout>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="inner-hero-sec">
 
-        {heroImage && (
-          <GatsbyImage
-            image={heroImage}
-            alt={heroDesktop?.altText || "Expertise page hero image"}
-            className="inner-hero-img"
-            loading="eager"
-          />
-        )}
-
-        <div className="container">
-          <div className="page-title">
-            <h1>
-              {pageNode?.anotherPageTitle?.pegeTitle || pageNode?.title}
-            </h1>
-          </div>
-        </div>
-
-      </section>
+       <section className="inner-hero-sec">
+      
+                {/* DESKTOP IMAGE */}
+                {heroImage && (
+                  <GatsbyImage
+                    image={heroImage}
+                    alt={heroDesktop?.altText || "About page hero image"}
+                    className="inner-hero-img desktop-img"
+                    loading="eager"
+                  />
+                )}
+      
+                {/* MOBILE IMAGE (STATIC URL) */}
+                <img
+                  src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/inside-mobile-image.png"   // 👈 your static mobile image path
+                  alt="About page mobile hero image"
+                  className="inner-hero-img mobile-img"
+                  loading="eager"
+                />
+      
+                <div className="container">
+                  <div className="page-title">
+                     {pageNode?.anotherPageTitle?.pegeTitle || pageNode?.title}
+                  </div>
+                </div>
+      
+              </section>
 
       {/* ================= EXPERTISE SECTION ================= */}
       <section className="expertise-main-page">

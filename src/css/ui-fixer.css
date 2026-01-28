@@ -15,6 +15,7 @@
 .inner-hero-img {
   position: absolute !important;
   inset: 0;
+  display: none;
 }
 
 .inner-hero-img .gatsby-image-wrapper {
@@ -174,22 +175,3 @@ display: none;
 
 
 
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  
-  transform: translateY(-100%);
-  opacity: 0;
-
- transition: all 0.5s;
-}
-
-/* When sticky */
-.site-header.is-sticky {
-  transform: translateY(0);
-  opacity: 1;
-}

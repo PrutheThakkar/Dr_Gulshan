@@ -33,6 +33,8 @@ const ContactPage = ({ data }) => {
         </div>
       </section>
 
+      
+
       {/* ================= APPOINTMENT SECTION ================= */}
       <section className="appointment-section">
         <div className="container">

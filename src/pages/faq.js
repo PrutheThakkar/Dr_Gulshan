@@ -22,6 +22,8 @@ const FaqPage = ({ data }) => {
         </div>
       </section>
 
+     
+
       {/* ================= FAQ SECTION ================= */}
       <FaqSection />
     </Layout>

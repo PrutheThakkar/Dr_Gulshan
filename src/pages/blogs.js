@@ -16,22 +16,36 @@ const BlogListingPage = ({ data }) => {
   return (
     <Layout>
       {/* ================= HERO SECTION ================= */}
-      <section className="inner-hero-sec">
-        {heroImage && (
-          <GatsbyImage
-            image={heroImage}
-            alt={heroDesktop?.altText || page?.title || "Blog"}
-            className="inner-hero-img"
-            loading="eager"
-          />
-        )}
+ 
+       <section className="inner-hero-sec">
+      
+                {/* DESKTOP IMAGE */}
+                {heroImage && (
+                  <GatsbyImage
+                    image={heroImage}
+                    alt={heroDesktop?.altText || "About page hero image"}
+                    className="inner-hero-img desktop-img"
+                    loading="eager"
+                  />
+                )}
+      
+                {/* MOBILE IMAGE (STATIC URL) */}
+                <img
+                  src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/inside-mobile-image.png"   // 👈 your static mobile image path
+                  alt="About page mobile hero image"
+                  className="inner-hero-img mobile-img"
+                  loading="eager"
+                />
+      
+                <div className="container">
+                  <div className="page-title">
+                    <h1>Blog & Patient Education</h1>
+                  </div>
+                </div>
+      
+              </section>
 
-        <div className="container">
-          <div className="page-title">
-            <h1>Blog & Patient Education</h1>
-          </div>
-        </div>
-      </section>
+
 
       {/* ================= BLOG LISTING ================= */}
       <section className="blog-listing-page">
