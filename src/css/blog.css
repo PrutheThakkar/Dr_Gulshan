@@ -52,6 +52,7 @@
   box-shadow: 0 0px 15px rgba(155, 28, 28, 0.5);
   overflow: hidden;
   transition: all 0.4s ease;
+  height: 100% !important;
 }
 .latest-update .blog-card:hover {
   transform: translateY(-10px);

@@ -756,7 +756,7 @@
   position: relative;
 }
 .google-reviews .reviews-header h3 {
-  font-size: 22px;
+  /* font-size: 22px; */
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -933,6 +933,7 @@
 }
 .latest-update .swiper-slide {
   width: 360px;
+  height: auto !important;
 }
 .latest-update .blog-card {
   background: #fff;
