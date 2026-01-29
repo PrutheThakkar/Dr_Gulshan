@@ -1376,7 +1376,7 @@ display: none;
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   overflow: hidden;
   background: transparent;
 }
@@ -1461,7 +1461,7 @@ display: none;
 }
 .loading-text {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 3px;
   color: #b11212;
 }
