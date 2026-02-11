@@ -9,7 +9,7 @@ const Footer = () => {
     <>
       <footer className="site-footer">
         <div className="footer-bg pseudo-animate">
-          <div className="footer-container">
+          <div className="container footer-container">
             <div className="footer-grid">
 
               {/* ABOUT */}

@@ -53,7 +53,7 @@ const LatestUpdate = ({ hideKnowMore = false }) => {
             768: { slidesPerView: 2 },
             1200: { slidesPerView: 2, spaceBetween: 60 },
             1440: { slidesPerView: 3, spaceBetween: 60 },
-            1680: { slidesPerView: 3, spaceBetween: 160 },
+            1680: { slidesPerView: 3, spaceBetween: 120 },
           }}
         >
           {posts.map(({ node }) => (

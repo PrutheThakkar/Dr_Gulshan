@@ -10,7 +10,7 @@ module.exports = {
     title: `Gulshan Rohra`,
     description: `Gatsby + WordPress (WPGraphQL) site`,
     author: `@gulshan-rohra`,
-    siteUrl: process.env.GATSBY_WEBSITE_URL || "https://darkblue-cat-525235.hostingersite.com",
+    siteUrl: process.env.GATSBY_WEBSITE_URL || "https://studiosentientdemo.com",
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.GATSBY_WPGRAPHQL_URL || "https://darkblue-cat-525235.hostingersite.com/graphql",
+        url: process.env.GATSBY_WPGRAPHQL_URL || "https://studiosentientdemo.com/graphql",
       },
     },
   ],
@@ -31,7 +31,7 @@ module.exports = {
     app.use(
       "/wp-json",
       createProxyMiddleware({
-        target: "https://darkblue-cat-525235.hostingersite.com",
+        target: "https://studiosentientdemo.com",
         changeOrigin: true,
         secure: false,
       })

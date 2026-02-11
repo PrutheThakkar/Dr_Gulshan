@@ -46,7 +46,7 @@ const ExpertisePage = ({ data }) => {
       
                 <div className="container">
                   <div className="page-title">
-                     {pageNode?.anotherPageTitle?.pegeTitle || pageNode?.title}
+                     <h1>{pageNode?.anotherPageTitle?.pegeTitle || pageNode?.title}</h1>
                   </div>
                 </div>
       

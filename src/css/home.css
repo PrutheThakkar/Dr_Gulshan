@@ -30,6 +30,18 @@
 .hero-image {
   perspective: 1000px;
 }
+
+  .hero-image {
+    height: 820px;
+    width: auto;
+  }
+
+@media (max-width: 2000px) {
+  .hero-image {
+    height: 750px;
+    width: auto;
+  }
+}
 @media (max-width: 1480px) {
   .hero-image {
     height: 620px;
@@ -121,7 +133,13 @@
   }
 }
 .hero-section .hero-content {
-  padding-top: 10%;
+  padding-top: 14%;
+}
+
+@media (max-width: 1366px) {
+  .hero-section .hero-content {
+   padding-top: 10%;
+  }
 }
 @media (max-width: 767px) {
   .hero-section .hero-content {
@@ -139,10 +157,12 @@
   }
 }
 .hero-section .hero-content p.sub-title {
-  font-size: clamp(1.5rem, -0.3493rem + 2.1661vw, 2.25rem);
+  /* font-size: clamp(1.5rem, -0.3493rem + 2.1661vw, 2.25rem); */
+  /* font-size: 26px; */
+  font-size: clamp(1.125rem, 0.1250rem + 1.2500vw, 1.625rem);
   color: rgba(0, 0, 0, 0.75);
   width: 60%;
-  margin-top: clamp(1.875rem, -1.2071rem + 3.6101vw, 3.125rem);
+  margin-top: clamp(1.875rem, -1.2071rem + 3.6101vw, 2.125rem);
   margin-bottom: 0;
 }
 @media (max-width: 1920px) {
@@ -161,8 +181,8 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  right: 0;
-  top: 30px;
+  right: 8%;
+  top: 60px;
 }
 @media (max-width: 767px) {
   .hero-section .hero-image {
@@ -267,7 +287,6 @@
 .symptoms-section span {
   font-size: clamp(1.25rem, 0.9167rem + 0.6944vw, 1.75rem);
   color: #9e0101;
-  font-family: "Tienne", serif;
 }
 @media (max-width: 767px) {
   .symptoms-section span {

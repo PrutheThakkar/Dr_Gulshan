@@ -161,12 +161,12 @@ const Header = () => {
   return (
     <>
       {/* ================= CURSOR (ADDED) ================= */}
-      <div className="image-cursor" ref={cursorRef}>
+      {/* <div className="image-cursor" ref={cursorRef}>
         <img
           src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/cursor-red.png"
           alt="cursor"
         />
-      </div>
+      </div> */}
       <div className="magnifier" ref={magnifierRef}></div>
 
       {/* ================= PRELOADER (ADDED) ================= */}
