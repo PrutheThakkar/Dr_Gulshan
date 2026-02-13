@@ -194,6 +194,27 @@ const ContactPage = ({ data }) => {
 
 export const query = graphql`
   query MyQuery {
+   wpPage(databaseId: {eq: 243}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
     allWpPage(filter: { databaseId: { eq: 243 } }) {
       edges {
         node {

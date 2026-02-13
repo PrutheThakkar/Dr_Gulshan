@@ -93,7 +93,27 @@ const ExpertisePage = ({ data }) => {
 
 export const query = graphql`
   query ExpertisePageQuery {
-
+ wpPage(databaseId: {eq: 237}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
     allWpPage(filter: { databaseId: { eq: 237 } }) {
       edges {
         node {

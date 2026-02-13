@@ -136,7 +136,7 @@ const AboutPage = ({ data }) => {
 
             <div className="btn-wrap">
               <h2>Get Expert Guidance</h2>
-              <a className="btn-primary" href="#">
+              <a className="btn-primary" href="/contact-us">
                 Book An Appointment
                 <span>
                   <svg
@@ -166,6 +166,27 @@ const AboutPage = ({ data }) => {
 
 export const query = graphql`
  query MyQuery {
+  wpPage(databaseId: {eq: 234}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
   allWpPage(filter: {databaseId: {eq: 234}}) {
     nodes {
       aboutUs {

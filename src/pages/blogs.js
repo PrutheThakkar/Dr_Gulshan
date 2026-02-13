@@ -134,6 +134,27 @@ export const query = graphql`
     wpPage(databaseId: { eq: 362 }) {
       title
     }
+    wpPage(databaseId: {eq: 362}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
     allWpPost {
       edges {
         node {

@@ -35,6 +35,27 @@ const FaqPage = ({ data }) => {
 
 export const query = graphql`
   query FaqPageQuery {
+   wpPage(databaseId: {eq: 434}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
     allWpPage(filter: { databaseId: { eq: 434 } }) {
       edges {
         node {

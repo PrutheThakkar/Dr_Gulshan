@@ -287,12 +287,15 @@ const Header = () => {
               }
 
               return (
-                <li key={item.id}>
-                  <Link to={slug === "Home" ? "/" : `/${slug}`}>
-                    {item.label}
-                  </Link>
-                </li>
-              )
+    <li key={item.id}>
+      <Link
+        to={slug === "home" ? "/" : `/${slug}`}  // Update the Home slug to always go to root "/"
+        onClick={closeMenu}
+      >
+        {item.label}
+      </Link>
+    </li>
+  );
             })}
 
             <li>

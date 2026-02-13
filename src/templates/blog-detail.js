@@ -86,6 +86,7 @@ query BlogDetail($id: String!) {
         )
       }
     }
+      
     blogBanner {
       blogImageDesk {
         node {

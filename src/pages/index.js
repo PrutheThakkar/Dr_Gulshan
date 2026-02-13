@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import LatestUpdate from "../components/LatestUpdate";
 import ExpertiseSection from "../components/ExpertiseSection";
 import PatientsDiary from "../components/PatientsDiary";
+import Seo from "../components/SeoMeta";
 import GoogleReviews from "../components/GoogleReviews";
 import GoogleReviewsnew from "../components/GoogleReviewNew";
 import FaqSection from "../components/FAQ";
@@ -15,6 +16,7 @@ const HomePage = ({ data }) => {
   const homePage = data?.allWpPage?.nodes?.[0]?.homePage;
   const expertisePosts = data?.allWpExpertise?.edges || []
   const faqs = data?.allWpFaq?.nodes?.[0]?.faqSectionNew?.faq || [];
+  const seo = data?.wpPage?.seo || [];
 
   const videoRef = useRef(null);
   const videoSectionRef = useRef(null);
@@ -48,6 +50,16 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout>
+       {/* SEO Metadata */}
+      {/* <Seo
+        seoData={seo}
+        bodyClass={"new-home"}
+        pageUrl={pageUrl}
+        visibility={false}
+        title={`${pageTitle} - Dr. Gulshan Rohra`}  // Append page title dynamically
+        description={pageDescription}
+      /> */}
+
       {/* HERO SECTION */}
       <section className="hero-section">
         <div className="container hero-inner">
@@ -153,7 +165,7 @@ const HomePage = ({ data }) => {
 
       <GoogleReviews />
 
-       <GoogleReviewsnew />
+       {/* <GoogleReviewsnew /> */}
 
      <LatestUpdate posts={data.allWpPost.edges} />
 
@@ -164,8 +176,33 @@ const HomePage = ({ data }) => {
   );
 };
 
+// export const Head = ({ data }) => (
+//   <Seo seoData={data?.wpPage?.seo || []} bodyClass={"new-home"} pageUrl={data?.wpPage?.uri} visibility={false} />
+// );
+
 export const query = graphql`
  query MyQuery {
+  wpPage(databaseId: {eq: 10}) {
+    id
+    title
+    slug
+    seo {
+      canonical
+      opengraphDescription
+      opengraphImage {
+        altText
+         mediaItemUrl
+        height
+        width
+        mediaType
+      }
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+    }
+  }
   allWpPage(filter: {databaseId: {eq: 10}}) {
     nodes {
       homePage {
