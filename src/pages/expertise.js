@@ -116,10 +116,11 @@ export const query = graphql`
       }
     }
 
-    allWpExpertise {
-      edges {
-        node {
-          title
+   allWpExpertise {
+    edges {
+      node {
+        id
+         title
           slug  
           featuredImage {
             node {
@@ -127,9 +128,37 @@ export const query = graphql`
               mediaItemUrl
             }
           }
+        expertiseImage {
+          expertiseImgDesk {
+            node {
+              altText
+              gatsbyImage(
+                width: 10
+                sizes: ""
+                quality: 100
+                height: 10
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
+            }
+          }
+          expertiseImgMob{
+            node {
+              altText
+              gatsbyImage(
+                width: 10
+                sizes: ""
+                quality: 100
+                height: 10
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
+            }
+          }
         }
       }
     }
+  }
 
   }
 `

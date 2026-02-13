@@ -7,6 +7,8 @@ import "swiper/css"
 const ExpertiseSection = ({ expertiseData = [] }) => {
   if (!expertiseData.length) return null
 
+  
+
   return (
     <section className="expertise-slider pseudo-animate">
       <div className="container">

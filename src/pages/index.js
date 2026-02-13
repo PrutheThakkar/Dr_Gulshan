@@ -5,6 +5,7 @@ import LatestUpdate from "../components/LatestUpdate";
 import ExpertiseSection from "../components/ExpertiseSection";
 import PatientsDiary from "../components/PatientsDiary";
 import GoogleReviews from "../components/GoogleReviews";
+import GoogleReviewsnew from "../components/GoogleReviewNew";
 import FaqSection from "../components/FAQ";
 import Layout from "../components/LayoutNew";
 import { initHeroAnimation } from "../Animation/HomeAnimation"
@@ -152,6 +153,8 @@ const HomePage = ({ data }) => {
 
       <GoogleReviews />
 
+       <GoogleReviewsnew />
+
      <LatestUpdate posts={data.allWpPost.edges} />
 
       {/* FAQ SECTION */}
@@ -231,6 +234,32 @@ export const query = graphql`
             link
             mediaItemUrl
             altText
+          }
+        }
+           blogBanner {
+          blogImageDesk {
+            node {
+              altText
+              gatsbyImage(
+                height: 10
+                width: 10
+                quality: 10
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
+            }
+          }
+          blogImageMob {
+            node {
+              altText
+               gatsbyImage(
+                height: 10
+                width: 10
+                quality: 10
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
+            }
           }
         }
       }

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // ✅ DEFAULT imports (FIXED)
 import ExpertiseSection from "../components/ExpertiseSection"
@@ -11,19 +11,35 @@ const ExpertiseDetailPage = ({ data }) => {
 
   if (!expertise) return <p>Loading...</p>
 
-  const image = getImage(expertise.featuredImage?.node?.gatsbyImage)
+  // Fetch desktop and mobile images
+  const desktopImage = getImage(expertise.expertiseImage?.expertiseImgDesk?.node?.gatsbyImage)
+  const mobileImage = getImage(expertise.expertiseImage?.expertiseImgMob?.node?.gatsbyImage)
+  const fallbackImage = getImage(expertise.featuredImage?.node?.gatsbyImage)
 
   return (
     <Layout>
       {/* ================= HERO ================= */}
       <section className="inner-hero-sec">
-        <StaticImage
-          src="../images/web-banner-inside.png"
-          alt={expertise.title}
-          className="inner-hero-img"
-          placeholder="blurred"
-          layout="fullWidth"
-        />
+        {/* Dynamically load desktop or mobile image based on window size */}
+        {desktopImage && (
+          <GatsbyImage
+            image={desktopImage}
+            alt={expertise.expertiseImage?.expertiseImgDesk?.node?.altText || expertise.title}
+            className="inner-hero-img"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
+        )}
+        {/* Mobile image for smaller screen sizes */}
+        {mobileImage && (
+          <GatsbyImage
+            image={mobileImage}
+            alt={expertise.expertiseImage?.expertiseImgMob?.node?.altText || expertise.title}
+            className="inner-hero-img"
+            placeholder="blurred"
+            layout="fullWidth"
+          />
+        )}
 
         <div className="container">
           <div className="page-title">
@@ -39,11 +55,11 @@ const ExpertiseDetailPage = ({ data }) => {
 
             {/* LEFT */}
             <div className="left">
-              {image && (
+              {desktopImage && (
                 <GatsbyImage
-                  image={image}
+                  image={desktopImage}
                   alt={
-                    expertise.featuredImage?.node?.altText ||
+                    expertise.expertiseImage?.expertiseImgDesk?.node?.altText ||
                     expertise.title
                   }
                   className="float-image"
@@ -89,6 +105,32 @@ export const query = graphql`
         node {
           altText
           gatsbyImage(width: 487, height: 417, quality: 90)
+        }
+      }
+      expertiseImage {
+        expertiseImgDesk {
+          node {
+            altText
+            gatsbyImage(
+              width: 901
+              quality: 100
+              height: 451
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
+        }
+        expertiseImgMob {
+          node {
+            altText
+            gatsbyImage(
+              width: 451
+              quality: 100
+              height: 451
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
         }
       }
     }
