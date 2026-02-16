@@ -1,60 +1,155 @@
-import React, { useState, useEffect } from 'react';
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
 
-const GoogleReviews = () => {
-  // State to store reviews, loading state, and error state
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
 
-  // Fetch the reviews from Google API
-  useEffect(() => {
-    const fetchReviews = async () => {
-      const apiKey = process.env.GATSBY_GOOGLE_API_KEY; // API Key from .env
-      const placeId = process.env.GATSBY_GOOGLE_PLACE_ID; // Place ID from .env
-
-
-
-      // Construct the API URL
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${apiKey}`;
-
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.status === 'OK' && data.result.reviews) {
-          setReviews(data.result.reviews); // Set reviews if successful
-        } else {
-          setError('Unable to fetch reviews.'); // Handle error if no reviews are found
+const PatientsDiary = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allWpPage(filter: { databaseId: { eq: 10 } }) {
+        nodes {
+          homePage {
+            patientSDiaryTitle
+            patientSDiarySubtitle
+            videoSection {
+              testimonialTitle
+              testimonialSubtitle
+              testimonialVideo {
+                node {
+                  mediaItemUrl
+                }
+              }
+            }
+          }
         }
-      } catch (err) {
-        setError('Error fetching reviews'); // Handle fetch error
-      } finally {
-        setLoading(false); // Set loading to false after data is fetched
       }
-    };
+    }
+  `)
 
-    fetchReviews(); // Fetch reviews on component mount
-  }, []); // Empty dependency array means this effect runs only once on mount
+  const diary = data?.allWpPage?.nodes?.[0]?.homePage
+  if (!diary) return null
 
-  // Loading and error handling
-  if (loading) return <p>Loading reviews...</p>;
-  if (error) return <p>{error}</p>;
-
-  // Displaying the reviews
   return (
-    <div>
-      <h2>Google Reviews</h2>
-      <ul>
-        {reviews.map((review, index) => (
-          <li key={index}>
-            <strong>{review.author_name}</strong>
-            <p>Rating: {review.rating} / 5</p>
-            <p>{review.text}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    <section className="patients-diary pseudo-animate">
+      <div className="container">
+        <div className="section-header">
+          <span className="subtitle">
+            {diary.patientSDiarySubtitle || "TESTIMONIALS AND REVIEWS"}
+          </span>
+          <h2 className="title">
+            {diary.patientSDiaryTitle || "Patient’s Diary"}
+          </h2>
+        </div>
 
-export default GoogleReviews;
+        <div className="diary-slider-wrapper">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={60}
+            slidesPerView={2}
+            speed={1000}
+            grabCursor
+            navigation={{
+              nextEl: ".diary-next",
+              prevEl: ".diary-prev",
+            }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 30 },
+              768: { slidesPerView: 2, spaceBetween: 60 },
+            }}
+            className="diary-swiper"
+          >
+            {diary.videoSection?.map((testimonial, index) => (
+              <>
+             <SwiperSlide>
+            <div className="review-card">
+              <div className="review-top">
+                <div className="author">
+                  <img src="/img/user.jpg" alt="Dr Bineet Jha" />
+                  <div>
+                    <h4>Dr Bineet Jha</h4>
+                    <p>Local Guide · 21 reviews · 6 photos</p>
+                  </div>
+                </div>
+                <div className="menu-dots">⋮</div>
+              </div>
+
+              <div className="review-rating">
+                ★★★★★ <span>10 months ago</span>
+              </div>
+
+              <p className="review-text">
+                I came across Dr Gulshan Rohra Sir during treatment of my Mother in law.
+                She had to undergo Bypass surgery done by Dr Gulshan Sir. Surgery was
+                uneventful and post operative care was also amazing..
+              </p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="review-card">
+              <div className="review-top">
+                <div className="author">
+                  <img src="/img/user.jpg" alt="Dr Bineet Jha" />
+                  <div>
+                    <h4>Dr Bineet Jha</h4>
+                    <p>Local Guide · 21 reviews · 6 photos</p>
+                  </div>
+                </div>
+                <div className="menu-dots">⋮</div>
+              </div>
+
+              <div className="review-rating">
+                ★★★★★ <span>10 months ago</span>
+              </div>
+
+              <p className="review-text">
+                I came across Dr Gulshan Rohra Sir during treatment of my Mother in law.
+                She had to undergo Bypass surgery done by Dr Gulshan Sir. Surgery was
+                uneventful and post operative care was also amazing..
+              </p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="review-card">
+              <div className="review-top">
+                <div className="author">
+                  <img src="/img/user.jpg" alt="Dr Bineet Jha" />
+                  <div>
+                    <h4>Dr Bineet Jha</h4>
+                    <p>Local Guide · 21 reviews · 6 photos</p>
+                  </div>
+                </div>
+                <div className="menu-dots">⋮</div>
+              </div>
+
+              <div className="review-rating">
+                ★★★★★ <span>10 months ago</span>
+              </div>
+
+              <p className="review-text">
+                I came across Dr Gulshan Rohra Sir during treatment of my Mother in law.
+                She had to undergo Bypass surgery done by Dr Gulshan Sir. Surgery was
+                uneventful and post operative care was also amazing..
+              </p>
+            </div>
+          </SwiperSlide>
+
+</>
+            ))}
+          </Swiper>
+
+          <div className="diary-nav">
+            <div className="swiper-button-prev diary-prev"></div>
+            <div className="swiper-button-next diary-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default PatientsDiary
