@@ -25,6 +25,9 @@
     "sass": "^1.97.2",
     "sharp": "^0.34.5",
     "swiper": "^12.1.0",
+    "webpack": "^5.105.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-merge": "^6.0.1",
     "yup": "^1.7.1"
   },
   "devDependencies": {
