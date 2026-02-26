@@ -151,6 +151,7 @@ display: flex;
 }
 .gulshan-img-text-sec .container .left p {
   text-align: center;
+  line-height: 2em;
 }
 .gulshan-img-text-sec .container .right {
   width: 50%;

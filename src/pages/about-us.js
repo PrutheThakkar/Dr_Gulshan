@@ -121,7 +121,7 @@ const AboutPage = ({ data }) => {
                     {/* Static Image Fallback */}
 
                     <img
-                      src="https://studiosentientdemo.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
+                      src="https://drgulshanrohra.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
                       alt="Static Power List Image"
                       className="power-list-img"
                       loading="eager"

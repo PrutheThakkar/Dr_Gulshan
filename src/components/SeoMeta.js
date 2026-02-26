@@ -77,7 +77,7 @@ const Seo = ({ bodyClass, title, description, seoData, children, visibility = tr
 
       <meta property="og:site_name" content={seoData && seoData.opengraphSiteName ? seoData.opengraphSiteName : "Achievers"} />
 
-      <meta property="og:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://studiosentientdemo.com/wp-content/uploads/2026/02/Heart-Banner-2.png"} />
+      <meta property="og:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://drgulshanrohra.com/wp-content/uploads/2026/02/Heart-Banner-2.png"} />
       <meta property="og:image:width" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.width : 200} />
       <meta property="og:image:height" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.height : 200} />
       <meta property="og:image:type" content={seoData && seoData?.mediaType ? seoData.mediaType : "image/png"} />
@@ -87,7 +87,7 @@ const Seo = ({ bodyClass, title, description, seoData, children, visibility = tr
       />
       <meta name="twitter:card" content="summary_large_image"></meta>
       <meta name="twitter:site" content={seoData && seoData.opengraphSiteName ? seoData.opengraphSiteName : "hacker"} />
-      <meta property="twitter:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://studiosentientdemo.com/wp-content/uploads/2026/02/Heart-Banner-2.png"} />
+      <meta property="twitter:image" content={seoData && seoData.opengraphImage ? seoData.opengraphImage.mediaItemUrl : "https://drgulshanrohra.com/wp-content/uploads/2026/02/Heart-Banner-2.png"} />
       <meta property="twitter:title" content={seoData && seoData.title ? seoData.title : title} />
       <meta property="twitter:description" content={seoData && seoData.metaDesc ? seoData.metaDesc : description} />
       {/* <meta

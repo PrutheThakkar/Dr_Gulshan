@@ -6,7 +6,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const WEBSITE_URL = process.env.GATSBY_BASE_URL;
-const CF7_FORM_ID = process.env.GATSBY_CF7_FORM_ID || "78"; // post=78 from screenshot
+const CF7_FORM_ID = process.env.GATSBY_CF7_FORM_ID || "7"; // post=78 from screenshot
 
 const ContactPage = ({ data }) => {
   const page = data?.allWpPage?.edges?.[0]?.node;
