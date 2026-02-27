@@ -66,7 +66,7 @@ const HomePage = ({ data }) => {
           <div className="hero-content">
             <h1>
               {homePage.pageTitle ||
-                "Your heart is special, preserve it with us"}
+                "Your heart is special, preserve."}
             </h1>
             <p className="sub-title hero-para">
               {homePage.pageSubtitle ||
