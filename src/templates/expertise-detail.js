@@ -20,26 +20,7 @@ const ExpertiseDetailPage = ({ data }) => {
     <Layout>
       {/* ================= HERO ================= */}
       <section className="inner-hero-sec">
-        {/* Dynamically load desktop or mobile image based on window size */}
-        {desktopImage && (
-          <GatsbyImage
-            image={desktopImage}
-            alt={expertise.expertiseImage?.expertiseImgDesk?.node?.altText || expertise.title}
-            className="inner-hero-img"
-            placeholder="blurred"
-            layout="fullWidth"
-          />
-        )}
-        {/* Mobile image for smaller screen sizes */}
-        {mobileImage && (
-          <GatsbyImage
-            image={mobileImage}
-            alt={expertise.expertiseImage?.expertiseImgMob?.node?.altText || expertise.title}
-            className="inner-hero-img"
-            placeholder="blurred"
-            layout="fullWidth"
-          />
-        )}
+       
 
         <div className="container">
           <div className="page-title">
