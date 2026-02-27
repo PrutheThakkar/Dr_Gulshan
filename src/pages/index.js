@@ -156,7 +156,7 @@ const HomePage = ({ data }) => {
       {/* Show image if video is not available */}
       <a href="/about-us"> <p>Get To Know The Doctor</p>
       <img 
-        src="https://studiosentientdemo.com/wp-content/uploads/2026/02/About-Doctor.png" 
+        src="https://drgulshanrohra.com/wp-content/uploads/2026/02/About-Doctor.png" 
         alt="Video coming soon" 
         className="video-fallback-image" 
       />
