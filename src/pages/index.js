@@ -70,7 +70,7 @@ const HomePage = ({ data }) => {
             </h1>
             <p className="sub-title hero-para">
               {homePage.pageSubtitle ||
-                "Under the care of Dr. Gulshan Rohra..."}
+                "Under the care of Dr. Gulshan Rohra."}
             </p>
             <Link to={homePage.pageLink || "/about-us"} className="btn-primary">
               Know More <span>
