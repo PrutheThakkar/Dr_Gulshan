@@ -136,31 +136,31 @@ const ContactPage = ({ data }) => {
                 {({ isSubmitting }) => (
                   <Form className="appointment-form">
                     <div className="form-group">
-                      <label>First Name*</label>
+                      {/* <label>First Name*</label> */}
                       <Field type="text" name="firstName" placeholder="Enter First Name" />
                       <ErrorMessage name="firstName" component="div" className="error" />
                     </div>
 
                     <div className="form-group">
-                      <label>Last Name*</label>
+                      {/* <label>Last Name*</label> */}
                       <Field type="text" name="lastName" placeholder="Enter Last Name" />
                       <ErrorMessage name="lastName" component="div" className="error" />
                     </div>
 
                     <div className="form-group">
-                      <label>Mobile Number*</label>
+                      {/* <label>Mobile Number*</label> */}
                       <Field type="tel" name="phone" placeholder="Enter Phone Number" />
                       <ErrorMessage name="phone" component="div" className="error" />
                     </div>
 
                     <div className="form-group">
-                      <label>Mail ID*</label>
+                      {/* <label>Mail ID*</label> */}
                       <Field type="email" name="email" placeholder="Enter Email" />
                       <ErrorMessage name="email" component="div" className="error" />
                     </div>
 
                     <div className="form-group">
-                      <label>Your Message*</label>
+                      {/* <label>Your Message*</label> */}
                       <Field as="textarea" name="message" rows="3" placeholder="Enter your message" />
                       <ErrorMessage name="message" component="div" className="error" />
                     </div>

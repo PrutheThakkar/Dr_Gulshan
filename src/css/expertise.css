@@ -136,7 +136,7 @@
   text-align: center;
   margin-bottom: 50px;
 }
-.expertise-main-page .section-header .subtitle {
+/* .expertise-main-page .section-header .subtitle {
   display: block;
   font-size: 14px;
   letter-spacing: 2px;
@@ -149,7 +149,7 @@
   font-weight: 600;
   color: #9b1c1c;
   line-height: 1.2;
-}
+} */
 .expertise-main-page .expertise-grid {
   list-style: none;
   padding: 0;

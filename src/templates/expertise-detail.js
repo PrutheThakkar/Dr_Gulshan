@@ -15,7 +15,7 @@ const ExpertiseDetailPage = ({ data }) => {
   const desktopImage = getImage(expertise.expertiseImage?.expertiseImgDesk?.node?.gatsbyImage)
   const mobileImage = getImage(expertise.expertiseImage?.expertiseImgMob?.node?.gatsbyImage)
   const fallbackImage = getImage(expertise.featuredImage?.node?.gatsbyImage)
-
+ const expertisePosts = data?.allWpExpertise?.edges || []
   return (
     <Layout>
       {/* ================= HERO ================= */}
@@ -88,7 +88,7 @@ const ExpertiseDetailPage = ({ data }) => {
       </section>
 
       {/* ================= EXPERTISE SLIDER ================= */}
-      <ExpertiseSection prePostOperative={[]} />
+      <ExpertiseSection expertiseData={expertisePosts} />
     </Layout>
   )
 }
@@ -134,5 +134,20 @@ export const query = graphql`
         }
       }
     }
+      allWpExpertise {
+      edges {
+        node {
+          title
+          slug
+          featuredImage {
+            node {
+              altText
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
+
   }
 `

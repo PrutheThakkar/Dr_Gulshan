@@ -151,29 +151,47 @@ export const initHeroAnimation = () => {
     /* =========================
        ELEMENTS (SAFE QUERIES)
     ========================= */
-    const heading = document.querySelector(".hero-section h1")
+   const heading = document.querySelector(".hero-section h1.main-title");
+const headingspan = document.querySelector(".hero-section span.main-title");
     const para = document.querySelector(".hero-para")
     const heart = document.getElementById("heartImage")
     const heroImage = document.querySelector(".hero-image")
 
-    if (!heading) return
+   if (!heading || !headingspan) return; // Check if both elements exist
 
-    /* =========================
-       SPLIT H1 INTO LETTERS
-    ========================= */
-    const headingText = heading.textContent.trim()
-    heading.textContent = ""
+// =========================
+// SPLIT H1 INTO LETTERS
+// =========================
+const headingText = heading.textContent.trim(); // Get the text content from <h1>
+heading.textContent = ""; // Clear the existing content
 
-    headingText.split("").forEach(char => {
-      if (char === " ") {
-        heading.append(" ")
-      } else {
-        const span = document.createElement("span")
-        span.classList.add("char")
-        span.textContent = char
-        heading.appendChild(span)
-      }
-    })
+headingText.split("").forEach(char => {
+  if (char === " ") {
+    heading.append(" "); // Add a space if the character is a space
+  } else {
+    const span = document.createElement("span");
+    span.classList.add("char");
+    span.textContent = char; // Set the character as text content
+    heading.appendChild(span); // Append each character wrapped in a <span> to <h1>
+  }
+});
+
+// =========================
+// SPLIT SPAN INTO LETTERS
+// =========================
+const headingTextSpan = headingspan.textContent.trim(); // Get the text content from <span>
+headingspan.textContent = ""; // Clear the existing content
+
+headingTextSpan.split("").forEach(char => {
+  if (char === " ") {
+    headingspan.append(" "); // Add a space if the character is a space
+  } else {
+    const span = document.createElement("span");
+    span.classList.add("char");
+    span.textContent = char; // Set the character as text content
+    headingspan.appendChild(span); // Append each character wrapped in a <span> to <span>
+  }
+});
 
     /* =========================
        SPLIT PARAGRAPH INTO WORDS

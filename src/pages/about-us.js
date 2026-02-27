@@ -66,8 +66,9 @@ const AboutPage = ({ data }) => {
             <div className="section-header">
               <span className="subtitle">About Dr. Gulshan Rohra</span>
               <h2 className="title">{aboutDrTitle}</h2> {/* About Dr. Title */}
-              <h3 className="subtitle">{aboutDrSubtitle}</h3> {/* About Dr. Subtitle */}
             </div>
+
+              
 
             <div className="img-wrap">
               {/* Dr. Image */}
@@ -121,7 +122,7 @@ const AboutPage = ({ data }) => {
                     {/* Static Image Fallback */}
 
                     <img
-                      src="https://drgulshanrohra.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
+                      src="https://studiosentientdemo.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
                       alt="Static Power List Image"
                       className="power-list-img"
                       loading="eager"

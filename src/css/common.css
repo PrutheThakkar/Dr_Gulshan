@@ -392,10 +392,23 @@ h1 {
   font-size: clamp(2.188rem, -1.4360rem + 4.5300vw, 4rem);
   font-family: "HedvigLettersSerif-Regular";
   color: var(--color-primary);
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 @media (max-width: 767px) {
   h1 {
+    font-size: clamp(1.563rem, 0.9651rem + 2.551vw, 2.188rem);
+  }
+}
+span.main-title {
+  /* font-size: clamp(2.813rem, -3.6595rem + 7.5812vw, 5.438rem); */
+  /* font-size: 64px; */
+  font-size: clamp(2.188rem, -1.4360rem + 4.5300vw, 4rem);
+  font-family: "HedvigLettersSerif-Regular";
+  color: var(--color-primary);
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  span.main-title {
     font-size: clamp(1.563rem, 0.9651rem + 2.551vw, 2.188rem);
   }
 }
@@ -893,7 +906,7 @@ p {
 .menu-toggle{
 display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 927px) {
   /* HEADER */
   .site-header {
     position: relative;
