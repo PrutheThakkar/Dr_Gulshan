@@ -109,7 +109,8 @@ display: none;
       max-height 0.45s ease,
       opacity 0.3s ease,
       transform 0.3s ease;
-    margin-left: 12px;
+    /* margin-left: 12px; */
+    margin-left: 0;
   }
 
   .mobile-expertise-list.open {
@@ -158,17 +159,21 @@ display: none;
       max-height 0.45s ease,
       opacity 0.3s ease,
       transform 0.3s ease;
-    margin-left: 12px;
+    
   }
 
   .mobile-expertise-list.open {
     max-height: 600px;
     opacity: 1;
     transform: translateY(0);
+    margin-top: 10px;
   }
 
    .mobile-expertise-list a{
     position: relative;
    }
   
+}
+.error{
+  color: red;
 }

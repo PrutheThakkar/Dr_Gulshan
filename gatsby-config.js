@@ -63,7 +63,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.GATSBY_WPGRAPHQL_URL || "https://app.drgulshanrohra.com/graphql",
+        url: process.env.GATSBY_WPGRAPHQL_URL || "https://app.drgulshanrohra.com//graphql",
       },
     },
   ],

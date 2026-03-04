@@ -61,7 +61,7 @@ const ExpertiseDetailPage = ({ data }) => {
 
           {/* CTA */}
           <div className="btn-wrap">
-            <a className="btn-primary" href="#contact">
+            <a className="btn-primary" href="/contact-us">
               Consult Dr Rohra today
             </a>
           </div>

@@ -184,7 +184,7 @@ display: flex;
 @media (max-width: 767px) {
   .the-Right-Surgery .blog-wrapper li {
     width: 100%;
-     margin-top: 50px;
+     margin-top: 30px;
     padding: 0 50px;
   }
 }
@@ -204,10 +204,16 @@ margin-bottom: 10px;
   justify-content: center;
   margin-top: 120px;
 }
+@media (max-width:1280px) {
+  .the-Right-Surgery .btn-wrap {
+  flex-direction: column;
+   margin-top: 50px;
+}
+}
 @media (max-width:767px) {
   .the-Right-Surgery .btn-wrap {
   flex-direction: column;
-   margin-top: 80px;
+   margin-top: 20px;
 }
 }
 .the-Right-Surgery .btn-wrap a {
@@ -226,3 +232,9 @@ margin-bottom: 10px;
   padding-left: 120px;
   padding-right: 120px;
 }/*# sourceMappingURL=about.css.map */
+@media (max-width:767px) {
+  .the-Right-Surgery .btn-wrap a, .the-Right-Surgery .btn-wrap h2 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }/*# sourceMappingURL=about.css.map */
+}

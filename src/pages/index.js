@@ -65,8 +65,8 @@ const HomePage = ({ data }) => {
         <div className="container hero-inner">
           <div className="hero-content">
 
-            <h1 className="main-title">Your heart is special, </h1>
-            <span className="main-title">preserve.</span>
+            <h1 className="main-title">YOUR HEART IS SPECIAL, </h1>
+            <span className="main-title">PRESERVE IT</span>
           
             <p className="sub-title hero-para">
               {homePage.pageSubtitle ||
@@ -156,7 +156,7 @@ const HomePage = ({ data }) => {
       {/* Show image if video is not available */}
       <a href="/about-us"> <p>Get To Know The Doctor</p>
       <img 
-        src="https://drgulshanrohra.com/wp-content/uploads/2026/02/About-Doctor.png" 
+        src="https://app.drgulshanrohra.com/wp-content/uploads/2026/02/About-Doctor.png" 
         alt="Video coming soon" 
         className="video-fallback-image" 
       />

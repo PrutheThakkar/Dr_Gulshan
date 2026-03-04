@@ -71,7 +71,8 @@ const LatestUpdate = ({ hideKnowMore = false }) => {
           }}
           breakpoints={{
             0: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2 },
+            768: { slidesPerView: 2,spaceBetween: 20 },
+            820: { slidesPerView: 2,spaceBetween: 20 },
             1200: { slidesPerView: 2, spaceBetween: 60 },
             1440: { slidesPerView: 3, spaceBetween: 60 },
             1680: { slidesPerView: 3, spaceBetween: 120 },

@@ -167,7 +167,7 @@ const ContactPage = ({ data }) => {
 
                     <div className="btn-wrap">
                       <button type="submit" className="btn-primary" disabled={isSubmitting}>
-                        {isSubmitting ? "Sending..." : "Send Your Message"}
+                        {isSubmitting ? "Sending..." : "Consult Now"}
                       </button>
                     </div>
 

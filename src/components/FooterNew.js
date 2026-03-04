@@ -28,7 +28,7 @@ const Footer = () => {
                 <ul className="footer-links">
                   <li><Link to="/blogs">Blogs</Link></li>
                   {/* <li><Link to="/press">Press Articles</Link></li> */}
-                  <li><Link to="/contact">Contact</Link></li>
+                  <li><Link to="/contact-us">Contact</Link></li>
                 </ul>
               </div>
 

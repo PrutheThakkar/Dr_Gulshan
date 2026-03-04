@@ -55,7 +55,7 @@ const AboutPage = ({ data }) => {
 
           <div className="container">
             <div className="page-title">
-              <h1>About Us</h1>
+              <h1>About</h1>
             </div>
           </div>
         </section>
@@ -123,7 +123,7 @@ const AboutPage = ({ data }) => {
                     
 
                     <img
-                      src="https://drgulshanrohra.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
+                      src="https://app.drgulshanrohra.com/wp-content/uploads/2026/02/Heart.png" // Replace with your static image path
                       alt="Static Power List Image"
                       className="power-list-img"
                       loading="eager"
