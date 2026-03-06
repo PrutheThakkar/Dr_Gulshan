@@ -495,12 +495,12 @@
   flex-wrap: wrap;
 }
 .blog-page-main .container .blog-page {
-  width: 30%;
+  width: 29%;
   margin: 20px;
 }
 @media (max-width:1024px) {
   .blog-page-main .container .blog-page {
-    width: 20%;
+    width: 42%;
     margin: 20px;
   }
 }

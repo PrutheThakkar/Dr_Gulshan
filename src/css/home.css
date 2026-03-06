@@ -1071,6 +1071,11 @@
   /* height: auto; */
   background: #f6eaea;
 }
+@media (max-width:1152px) {
+  .latest-update .blog-image{
+    height: 200px;
+  }
+}
 .latest-update .blog-image img {
   width: 100%;
 }

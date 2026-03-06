@@ -148,7 +148,7 @@ body {
 }
 
 /* Magnifier style */
-.magnifier {
+/* .magnifier {
   position: fixed;
   top: 0;
   left: 0;
@@ -161,8 +161,8 @@ body {
   transform: translate(-50%, -50%) scale(1);
   box-shadow: 0 0 20px rgba(158, 1, 1, 0.1);
   background-repeat: no-repeat;
-  background-size: 200%; /* zoom factor */
-}
+  background-size: 200%; 
+} */
 
 /*
  * Remove text-shadow in selection highlight:
