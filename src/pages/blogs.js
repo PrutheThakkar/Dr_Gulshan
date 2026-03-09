@@ -32,7 +32,7 @@ const BlogListingPage = ({ data }) => {
 
         {/* MOBILE IMAGE (STATIC URL) */}
         <img
-          src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/inside-mobile-image.png"   // 👈 your static mobile image path
+          src="https://app.drgulshanrohra.com/wp-content/uploads/2026/01/inside-mobile-image.png"   // 👈 your static mobile image path
           alt="Mobile Blog Hero Image"
           className="inner-hero-img mobile-img"
           loading="eager"

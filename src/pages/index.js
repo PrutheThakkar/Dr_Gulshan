@@ -84,7 +84,7 @@ const HomePage = ({ data }) => {
           </div>
           <div className="hero-image">
             <img
-              src="https://darkblue-cat-525235.hostingersite.com/wp-content/uploads/2026/01/Comp-1.gif"
+              src="https://app.drgulshanrohra.com/wp-content/uploads/2026/01/Comp-1.gif"
               alt="3D Heart Illustration"
               id="heartImage"
               loading="lazy"
