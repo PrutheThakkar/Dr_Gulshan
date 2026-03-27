@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import gsap from "gsap";
-import Logo from "../images/gulshan-rohra-logo.svg";
+import Logo from "../images/gulshan-logo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
