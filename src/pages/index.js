@@ -84,7 +84,7 @@ const HomePage = ({ data }) => {
           </div>
           <div className="hero-image">
             <img
-              src="https://app.drgulshanrohra.com/wp-content/uploads/2026/01/Comp-1.gif"
+              src="https://app.drgulshanrohra.com/wp-content/uploads/2026/03/Comp-1.gif"
               alt="3D Heart Illustration"
               id="heartImage"
               loading="lazy"
@@ -156,7 +156,7 @@ const HomePage = ({ data }) => {
       {/* Show image if video is not available */}
       <a href="/about-us"> <p>Get To Know The Doctor</p>
       <img 
-        src="https://app.drgulshanrohra.com/wp-content/uploads/2026/02/About-Doctor.png" 
+        src="https://app.drgulshanrohra.com/wp-content/uploads/2026/03/About-Doctor.png" 
         alt="Video coming soon" 
         className="video-fallback-image" 
       />
